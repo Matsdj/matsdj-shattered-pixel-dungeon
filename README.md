@@ -49,7 +49,7 @@ Suprise attacks shouldn't work if they are to close to you.
 Identifying
 
 ##Localization
-The damage increase of the ring of accuracy is not displayed yet
+The damage increase of the ring of accuracy is not displayed in other languages yet
 
 ##The big future change
 Town above ground to return to and heal up
