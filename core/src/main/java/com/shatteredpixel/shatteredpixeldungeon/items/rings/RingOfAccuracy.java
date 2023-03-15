@@ -34,12 +34,12 @@ public class RingOfAccuracy extends Ring {
 	public String statsInfo() {
 		if (isIdentified()){
 			return Messages.get(this, "stats",
-					new DecimalFormat("#.##").format(100f * (.5f * (soloBuffedBonus()))),
-					new DecimalFormat("#.##").format(100f * (.125f * (soloBuffedBonus()))));
+					Messages.decimalFormat("#.##", 100f * (.5f * (soloBuffedBonus()))),
+					Messages.decimalFormat("#.##", 100f * (.125f * (soloBuffedBonus()))));
 		} else {
 			return Messages.get(this, "typical_stats",
-					new DecimalFormat("#.##").format(50f),
-					new DecimalFormat("#.##").format(12.5f));
+					Messages.decimalFormat("#.##", 50f),
+					Messages.decimalFormat("#.##", 12.5f));
 		}
 	}
 	
