@@ -57,6 +57,7 @@ Town above ground to return to and heal up
 
 larger dungeon to explore
 Dungeon will generate loot on floors you've been too over time but the floor wil remain the same
+Every floor also has a safty room which will never change or spawn monsters meaning you can store things there, place structures and rest there.
 
 Safe area and resting mechanic
 
@@ -76,3 +77,36 @@ More species difercity and more weaknesses and strategies around different speci
 	example spiders are always weak to fire, 
 	
 Generate areas with consistent counters for example a snowy area where every enemy is weak to fire damage
+
+Weapons aren't found but made in town with materials
+
+Interresting synergy ideas which could be equipment or skills
+	A few categories:
+		When you take damage
+		When you deal damage with melee or ranged (on hit)
+			Apply an effect (bleed, cripple, fire, frost, etc)
+			Gain Mana
+			Heal x amount
+		When you deal magic damage
+		When you heal
+		When you lose all of your shield
+		When you gain mana
+		When you activate an artifact
+	A few things that happen because of those categories
+	When you run out of shield damage al enemies around you
+	Excess regen becomes shield
+	new Onhit effects
+		apply an effect 
+		gain mana
+		spawn toxic gas
+		etc
+	Ranged weapons apply onhit to x nearby targets
+	Melee weapons apply onhit to enemies within x tiles
+	Poison & toxic gas Imunnity
+	When you take damage you create a small amount of toxic gas
+	When enemies take fire damage they ignite nearby enemies
+	You're immune to fire damage and Fire no longer burns Items
+	Standing in fire regens your mana.
+	
+	Stepping on grass heals you
+	

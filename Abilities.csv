@@ -1,0 +1,9 @@
+Effect weight		10	10	10	2	2	5	5					
+	When you -> thishappens \/	Take Damage	Deal damage melee or ranged	Heal / regen	Gain shield	Lose all shield	Gain Mana	Activate Artifact	heal at max health (x = excess)	When you eat	Every turn	When you drink a potion	When you kill an enemy
+5	Damage enemies around target	1 or 50%x	1	1	10%x or 2	1	2	4	100%x or 2				
+10	Gain Shield	-	1	1	-	-	1	5					
+	Heal												
+	Food												
+	Gain Mana												
+	Extra Damage next attack												
+	Apply the most recent negative effect to the target	target is attacker											
