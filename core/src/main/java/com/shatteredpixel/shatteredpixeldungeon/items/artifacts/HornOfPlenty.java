@@ -29,6 +29,7 @@ import com.shatteredpixel.shatteredpixeldungeon.Statistics;
 import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Buff;
 import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Hunger;
 import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.MagicImmune;
+import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.WellFed;
 import com.shatteredpixel.shatteredpixeldungeon.actors.hero.Belongings;
 import com.shatteredpixel.shatteredpixeldungeon.actors.hero.Hero;
 import com.shatteredpixel.shatteredpixeldungeon.actors.hero.Talent;
@@ -111,6 +112,14 @@ public class HornOfPlenty extends Artifact {
 				if (action.equals(AC_SNACK)){
 					chargesToUse = 1;
 				}
+
+                float excessHunger = (satietyPerCharge * chargesToUse - hunger.level) / 2;
+                if (excessHunger > 0)
+                    if (hero.buff(WellFed.class) != null) {
+                        hero.buff(WellFed.class).left += excessHunger;
+                    } else {
+                        Buff.affect(hero, WellFed.class).left = (int) excessHunger;
+                    }
 
 				hunger.satisfy(satietyPerCharge * chargesToUse);
 

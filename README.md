@@ -11,6 +11,9 @@ accuracy increase of 1 + .5 * levelofring (at level 10 this would give you a 96%
 minimum damage of weapons would have guarenteed max damage at level 8 giving you 12.5% increase in minimum damage at every level
 chance. Beyond level 8 it is a 12.5% increase in total damage
 
+Ethereal Chains now cripple enemies just like the Guard enemy to make the pulling of enemies better
+
+Horn of plenty applies well fed when you exceed full hunger to make using it at max stacks more usefull
 
 # Future Reworks:
 ##Rings
@@ -32,10 +35,6 @@ Alchemist toolkit would be more interresting if it added new drops from enemies 
 
 Chalice of blood is not very interresting but very strong not sure how to fix it though.
 
-Ethereal chains should criple enemies.
-
-Horn of plenty should apply well fed when you exceed full hunger.
-
 Master Thieves Armband makes them weakend and vulnerable instead of cripple to differentiate from Ethereal chains.
 
 Talisman of Foresight is kinda weak because it offers no combat utility. It would be more usefull if it provided/improved mind vision like the tier 2 skill from the Huntress. Maybe extra information about enemies: How long until the eyeball shoots, Enemy viewing distance and if it sees you yet, etc. Also if the scry hits an enemy you will dodge their next attack.
@@ -44,10 +43,27 @@ Timekeeper's Hourglass should have the ability to revert the user to a state a f
 
 Unstable Spellbook should get a third option which allows you to delay the casting of the scroll at the cost of a charge.
 
+##Talents
+Rework some talents that aren't very interresting or usefull.
+
+##Enemies
+Make enemies more different:
+	like having more variety in movement speed(never being excactly the same speed as the player)
+	Having dodgeble charge up attacks
+	Enemies have more weaknesses, like extra damage from: Fire, Fros, etc
+
 ##Other
 Stewed Meat needs a reason to exist.
 
 Suprise attacks shouldn't work if they are to close to you.
+
+Add an extra row of quickslots
+
+Instead of gaining no xp when to high level get 10% xp
+
+You can identify items if you've gained 0 xp recently
+
+No more level cap of 30
 
 ##Localization
 The damage increase of the ring of accuracy is not displayed in other languages yet
