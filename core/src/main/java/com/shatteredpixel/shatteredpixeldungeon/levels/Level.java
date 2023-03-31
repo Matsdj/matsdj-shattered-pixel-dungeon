@@ -1293,14 +1293,18 @@ public abstract class Level implements Bundlable {
 						heroMindFov[mob.pos + i] = true;
 					}
 				}
-			} else if (((Hero) c).hasTalent(Talent.HEIGHTENED_SENSES)) {
+			} else {
 				Hero h = (Hero) c;
-				int range = 1+h.pointsInTalent(Talent.HEIGHTENED_SENSES);
-				for (Mob mob : mobs) {
-					int p = mob.pos;
-					if (!fieldOfView[p] && distance(c.pos, p) <= range) {
-						for (int i : PathFinder.NEIGHBOURS9) {
-							heroMindFov[mob.pos + i] = true;
+				int range = 1;
+				if (h.hasTalent(Talent.HEIGHTENED_SENSES)) range += h.pointsInTalent(Talent.HEIGHTENED_SENSES);
+				if (h.buff(TalismanOfForesight.Foresight.class) != null) range += h.buff(TalismanOfForesight.Foresight.class).MindVisionStrength();
+				if (range > 1) {
+					for (Mob mob : mobs) {
+						int p = mob.pos;
+						if (!fieldOfView[p] && distance(c.pos, p) <= range) {
+							for (int i : PathFinder.NEIGHBOURS9) {
+								heroMindFov[mob.pos + i] = true;
+							}
 						}
 					}
 				}

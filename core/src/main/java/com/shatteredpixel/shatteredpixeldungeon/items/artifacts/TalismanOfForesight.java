@@ -34,6 +34,7 @@ import com.shatteredpixel.shatteredpixeldungeon.actors.hero.Hero;
 import com.shatteredpixel.shatteredpixeldungeon.actors.hero.Talent;
 import com.shatteredpixel.shatteredpixeldungeon.effects.CheckedCell;
 import com.shatteredpixel.shatteredpixeldungeon.items.Heap;
+import com.shatteredpixel.shatteredpixeldungeon.items.rings.Ring;
 import com.shatteredpixel.shatteredpixeldungeon.items.rings.RingOfEnergy;
 import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfMagicMapping;
 import com.shatteredpixel.shatteredpixeldungeon.levels.Terrain;
@@ -344,6 +345,10 @@ public class TalismanOfForesight extends Artifact {
 			}
 		}
 
+		public int MindVisionStrength(){
+			return curItem.level()/2;
+		}
+
 		@Override
 		public int icon() {
 			if (warn)
@@ -409,5 +414,4 @@ public class TalismanOfForesight extends Artifact {
 			bundle.put(DEPTH, depth);
 		}
 	}
-
 }

@@ -17,6 +17,8 @@ Horn of plenty applies well fed when you exceed full hunger to make using it at 
 
 Master Thieves Armband makes them vulnerable instead of cripple to differentiate from Ethereal chains.
 
+Talisman of Foresight now provides/improves mind vision like the tier 2 skill from the Huntress, it goes up to 5 tiles of mind vision at level 10. You also gain 10% increased evasion per level
+
 # Future Reworks:
 ##Rings
 Ring of Elements is also very uninteresting in my opinion because it lacks interresting synergy with other items. having an support item that does consisten magic damage back to the user inexchange for something could be interresting. or an item that encourages taking magic damage somehow for example the unstable spellbook casts a random offensive spell (with random targets) when you take/block enough magic damage. or the Timekeeper's Hourglas gains charges from taking/blocking magic damage.
@@ -37,7 +39,7 @@ Alchemist toolkit would be more interresting if it added new drops from enemies 
 
 Chalice of blood is not very interresting but very strong not sure how to fix it though.
 
-Talisman of Foresight is kinda weak because it offers no combat utility. It would be more usefull if it provided/improved mind vision like the tier 2 skill from the Huntress. Maybe extra information about enemies: How long until the eyeball shoots, Enemy viewing distance and if it sees you yet, etc. Also if the scry hits an enemy you will dodge their next attack.
+Talisman of Foresight provides extra information about enemies: How long until the eyeball shoots, Enemy viewing distance and if it sees you yet, etc.
 
 Timekeeper's Hourglass should have the ability to revert the user to a state a few turns earlier like health and maybe position.
 
@@ -58,6 +60,9 @@ Make enemies more different:
 	Having dodgeble charge up attacks
 	Enemies have more weaknesses, like extra damage from: Fire, Fros, etc
 Elementals can drop Embers as a rare drop
+
+##Crafting/Consumables
+Some items I never craft/use these should be buffed/changed
 
 ##Other
 Stewed Meat needs a reason to exist.
