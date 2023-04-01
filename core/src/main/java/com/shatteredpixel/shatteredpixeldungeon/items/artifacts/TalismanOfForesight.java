@@ -349,6 +349,10 @@ public class TalismanOfForesight extends Artifact {
 			return curItem.level()/2;
 		}
 
+		public float IncreasedEvasion(){
+			return curItem.level()*1.1f;
+		}
+
 		@Override
 		public int icon() {
 			if (warn)

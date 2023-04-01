@@ -508,6 +508,8 @@ public class Hero extends Char {
 		
 		evasion *= RingOfEvasion.evasionMultiplier( this );
 
+		if (buff(TalismanOfForesight.Foresight.class) != null) evasion *= buff(TalismanOfForesight.Foresight.class).IncreasedEvasion();
+
 		if (buff(Talent.RestoredAgilityTracker.class) != null){
 			if (pointsInTalent(Talent.RESTORED_AGILITY) == 1){
 				evasion *= 4f;
