@@ -86,8 +86,8 @@ public class WandOfPrismaticLight extends DamageWand {
 	private void affectTarget(Char ch){
 		int dmg = damageRoll();
 
-		//three in (5+lvl) chance of failing
-		if (Random.Int(5+buffedLvl()) >= 3) {
+		//3-lvl in 5 chance of failing
+		if (Random.Int(5) >= (3-buffedLvl())) {
 			Buff.prolong(ch, Blindness.class, 2f + (buffedLvl() * 0.333f));
 			ch.sprite.emitter().burst(Speck.factory(Speck.LIGHT), 6 );
 		}

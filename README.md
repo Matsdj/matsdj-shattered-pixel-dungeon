@@ -5,12 +5,14 @@ A Roguelike RPG, with randomly generated levels, items, enemies, and traps! Base
 This is just my own version of shattered pixel dungeon where I make changes I feel like.
 
 # Finished changes:
+##Rings
 Ring of accuracy is very uninterresting to level up with scrolls so it could get crit at higher levels or increase minimum damage of your weapons.
 New ring of accuracy effects:
 accuracy increase of 1 + .5 * levelofring (at level 10 this would give you a 96% change to hit most things I think)
 minimum damage of weapons would have guarenteed max damage at level 8 giving you 12.5% increase in minimum damage at every level
 chance. Beyond level 8 it is a 12.5% increase in total damage
 
+##Artifacts
 Ethereal Chains now cripple enemies just like the Guard enemy to make the pulling of enemies better
 
 Horn of plenty applies well fed when you exceed full hunger to make using it at max stacks more usefull
@@ -19,7 +21,10 @@ Master Thieves Armband makes them vulnerable instead of cripple to differentiate
 
 Talisman of Foresight now provides/improves mind vision like the tier 2 skill from the Huntress, it goes up to 5 tiles of mind vision at level 10. You also gain 10% increased evasion per level
 
-# Future Reworks:
+##Wands
+Wand of light always blinds from level 3 onwards (3-lvl in 5 chance of failing)
+
+# Future Changes:
 ##Rings
 Ring of Elements is also very uninteresting in my opinion because it lacks interresting synergy with other items. having an support item that does consisten magic damage back to the user inexchange for something could be interresting. or an item that encourages taking magic damage somehow for example the unstable spellbook casts a random offensive spell (with random targets) when you take/block enough magic damage. or the Timekeeper's Hourglas gains charges from taking/blocking magic damage.
 
@@ -39,8 +44,6 @@ Alchemist toolkit would be more interresting if it added new drops from enemies 
 
 Chalice of blood is not very interresting but very strong not sure how to fix it though.
 
-Talisman of Foresight provides extra information about enemies: How long until the eyeball shoots, Enemy viewing distance and if it sees you yet, etc.
-
 Timekeeper's Hourglass should have the ability to revert the user to a state a few turns earlier like health and maybe position.
 
 Unstable Spellbook should get a third option which allows you to delay the casting of the scroll at the cost of a charge.
@@ -49,7 +52,6 @@ Unstable Spellbook should get a third option which allows you to delay the casti
 Rework some talents that aren't very interresting or usefull.
 
 ##Wands
-Wand of light more consistent blinds (at the cost of an extra charge?)
 Wands that doen't feel strong to use to me:
 	Wand of lightning
 	Wand of Disintegration
