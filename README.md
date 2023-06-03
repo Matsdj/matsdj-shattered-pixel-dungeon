@@ -34,7 +34,7 @@ Wand of light always blinds from level 3 onwards (3-lvl in 5 chance of failing)
 -
 
 ##Other
--
+Instead of gaining no xp when to high level get: xp / (1+excessLevel)
 
 # Future Changes:
 ##Rings
@@ -84,8 +84,6 @@ Stewed Meat needs a reason to exist.
 Suprise attacks shouldn't work if they are to close to you. In other words enemies have short term memory of where you were and wont be suprised if they go through a door after you
 
 Add an extra row of quickslots
-
-Instead of gaining no xp when to high level get: xp / (1+excessLevel)
 
 You can identify items if you've gained 0 xp recently
 
