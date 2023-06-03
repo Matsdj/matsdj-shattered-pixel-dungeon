@@ -67,19 +67,23 @@ abstract public class KindOfWeapon extends EquipableItem {
 				@Override
 				protected void onSelect(int index) {
 					super.onSelect(index);
-					if (index == 0){
+					if (index == 0 || index == 1){
+						//In addition to equipping itself, item reassigns itself to the quickslot
+						//This is a special case as the item is being removed from inventory, but is staying with the hero.
 						int slot = Dungeon.quickslot.getSlot( KindOfWeapon.this );
-						doEquip(hero);
+						slotOfUnequipped = -1;
+						if (index == 0) {
+							doEquip(hero);
+						} else {
+							equipSecondary(hero);
+						}
 						if (slot != -1) {
 							Dungeon.quickslot.setSlot( slot, KindOfWeapon.this );
 							updateQuickslot();
-						}
-					}
-					if (index == 1){
-						int slot = Dungeon.quickslot.getSlot( KindOfWeapon.this );
-						equipSecondary(hero);
-						if (slot != -1) {
-							Dungeon.quickslot.setSlot( slot, KindOfWeapon.this );
+						//if this item wasn't quickslotted, but the item it is replacing as equipped was
+						//then also have the item occupy the unequipped item's quickslot
+						} else if (slotOfUnequipped != -1 && defaultAction() != null) {
+							Dungeon.quickslot.setSlot( slotOfUnequipped, KindOfWeapon.this );
 							updateQuickslot();
 						}
 					}
@@ -97,7 +101,7 @@ abstract public class KindOfWeapon extends EquipableItem {
 	
 	@Override
 	public boolean doEquip( Hero hero ) {
-
+		boolean wasInInv = hero.belongings.contains(this);
 		detachAll( hero.belongings.backpack );
 		
 		if (hero.belongings.weapon == null || hero.belongings.weapon.doUnequip( hero, true )) {
@@ -106,7 +110,7 @@ abstract public class KindOfWeapon extends EquipableItem {
 			activate( hero );
 			Talent.onItemEquipped(hero, this);
 			Badges.validateDuelistUnlock();
-			ActionIndicator.updateIcon();
+			ActionIndicator.refresh();
 			updateQuickslot();
 
 			cursedKnown = true;
@@ -115,10 +119,10 @@ abstract public class KindOfWeapon extends EquipableItem {
 				GLog.n( Messages.get(KindOfWeapon.class, "equip_cursed") );
 			}
 
-			if (hero.hasTalent(Talent.SWIFT_EQUIP)) {
+			if (wasInInv && hero.hasTalent(Talent.SWIFT_EQUIP)) {
 				if (hero.buff(Talent.SwiftEquipCooldown.class) == null){
 					hero.spendAndNext(-hero.cooldown());
-					Buff.affect(hero, Talent.SwiftEquipCooldown.class, 29f)
+					Buff.affect(hero, Talent.SwiftEquipCooldown.class, 19f)
 							.secondUse = hero.pointsInTalent(Talent.SWIFT_EQUIP) == 2;
 					GLog.i(Messages.get(this, "swift_equip"));
 				} else if (hero.buff(Talent.SwiftEquipCooldown.class).hasSecondUse()) {
@@ -141,6 +145,7 @@ abstract public class KindOfWeapon extends EquipableItem {
 	}
 
 	public boolean equipSecondary( Hero hero ){
+		boolean wasInInv = hero.belongings.contains(this);
 		detachAll( hero.belongings.backpack );
 
 		if (hero.belongings.secondWep == null || hero.belongings.secondWep.doUnequip( hero, true )) {
@@ -149,7 +154,7 @@ abstract public class KindOfWeapon extends EquipableItem {
 			activate( hero );
 			Talent.onItemEquipped(hero, this);
 			Badges.validateDuelistUnlock();
-			ActionIndicator.updateIcon();
+			ActionIndicator.refresh();
 			updateQuickslot();
 
 			cursedKnown = true;
@@ -158,10 +163,10 @@ abstract public class KindOfWeapon extends EquipableItem {
 				GLog.n( Messages.get(KindOfWeapon.class, "equip_cursed") );
 			}
 
-			if (hero.hasTalent(Talent.SWIFT_EQUIP)) {
+			if (wasInInv && hero.hasTalent(Talent.SWIFT_EQUIP)) {
 				if (hero.buff(Talent.SwiftEquipCooldown.class) == null){
 					hero.spendAndNext(-hero.cooldown());
-					Buff.affect(hero, Talent.SwiftEquipCooldown.class, 29f)
+					Buff.affect(hero, Talent.SwiftEquipCooldown.class, 19f)
 							.secondUse = hero.pointsInTalent(Talent.SWIFT_EQUIP) == 2;
 					GLog.i(Messages.get(this, "swift_equip"));
 				} else if (hero.buff(Talent.SwiftEquipCooldown.class).hasSecondUse()) {

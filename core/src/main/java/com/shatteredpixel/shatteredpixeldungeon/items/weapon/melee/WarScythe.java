@@ -19,64 +19,43 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.items;
+package com.shatteredpixel.shatteredpixeldungeon.items.weapon.melee;
 
 import com.shatteredpixel.shatteredpixeldungeon.Assets;
+import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
 import com.shatteredpixel.shatteredpixeldungeon.actors.hero.Hero;
-import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.npcs.Shopkeeper;
+import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
 import com.shatteredpixel.shatteredpixeldungeon.sprites.ItemSpriteSheet;
-import com.watabou.noosa.audio.Sample;
 
-import java.util.ArrayList;
-
-//removed from drops, here for pre-1.1.0 saves
-public class MerchantsBeacon extends Item {
-
-	private static final String AC_USE = "USE";
+public class WarScythe extends MeleeWeapon {
 
 	{
-		image = ItemSpriteSheet.BEACON;
+		image = ItemSpriteSheet.WAR_SCYTHE;
+		hitSound = Assets.Sounds.HIT_SLASH;
+		hitSoundPitch = 0.9f;
 
-		stackable = true;
-
-		defaultAction = AC_USE;
-
-		bones = true;
+		tier = 5;
+		ACC = 0.8f; //20% penalty to accuracy
 	}
 
 	@Override
-	public ArrayList<String> actions(Hero hero) {
-		ArrayList<String> actions = super.actions(hero);
-		actions.add(AC_USE);
-		return actions;
+	public int max(int lvl) {
+		return  Math.round(6.67f*(tier+1)) +    //40 base, up from 30
+				lvl*(tier+1);                   //scaling unchanged
+	}
+
+	public float abilityChargeUse(Hero hero, Char target) {
+		return 2*super.abilityChargeUse(hero, target);
 	}
 
 	@Override
-	public void execute(Hero hero, String action) {
-
-		super.execute(hero, action);
-
-		if (action.equals(AC_USE)) {
-			detach( hero.belongings.backpack );
-			Shopkeeper.sell();
-			Sample.INSTANCE.play( Assets.Sounds.BEACON );
-		}
-
+	public String targetingPrompt() {
+		return Messages.get(this, "prompt");
 	}
 
 	@Override
-	public boolean isUpgradable() {
-		return false;
-	}
-
-	@Override
-	public boolean isIdentified() {
-		return true;
-	}
-
-	@Override
-	public int value() {
-		return 5 * quantity;
+	protected void duelistAbility(Hero hero, Integer target) {
+		Sickle.harvestAbility(hero, target, 0.8f, this);
 	}
 
 }

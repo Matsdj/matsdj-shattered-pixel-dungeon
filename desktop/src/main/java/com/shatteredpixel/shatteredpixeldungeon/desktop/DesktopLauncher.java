@@ -86,8 +86,11 @@ public class DesktopLauncher {
 				exceptionMsg = exceptionMsg.replace("com.shatteredpixel.shatteredpixeldungeon.", "");
 				exceptionMsg = exceptionMsg.replace("com.watabou.", "");
 				exceptionMsg = exceptionMsg.replace("com.badlogic.gdx.", "");
-				exceptionMsg = exceptionMsg.replace("\t", "    ");
-				exceptionMsg = exceptionMsg.replace("'", "");
+				exceptionMsg = exceptionMsg.replace("\t", "  "); //shortens length of tabs
+
+				//replace ' and " with similar equivalents as tinyfd hates them for some reason
+				exceptionMsg = exceptionMsg.replace('\'', '’');
+				exceptionMsg = exceptionMsg.replace('"', '”');
 
 				if (exceptionMsg.length() > 1000){
 					exceptionMsg = exceptionMsg.substring(0, 1000) + "...";
@@ -161,16 +164,6 @@ public class DesktopLauncher {
 			String titleLinux = title.toLowerCase(Locale.ROOT).replace(" ", "-");
 			basePath = XDGHome + "/." + vendor + "/" + titleLinux + "/";
 
-			//copy over files from old linux save DIR, pre-1.2.0
-			FileHandle oldBase = new Lwjgl3FileHandle("." + vendor + "/" + titleLinux + "/", Files.FileType.External);
-			FileHandle newBase = new Lwjgl3FileHandle(basePath, Files.FileType.Absolute);
-			if (oldBase.exists()){
-				if (!newBase.exists()) {
-					oldBase.copyTo(newBase.parent());
-				}
-				oldBase.deleteDirectory();
-				oldBase.parent().delete(); //only regular delete, in case of saves from other PD versions
-			}
 			baseFileType = Files.FileType.Absolute;
 		}
 

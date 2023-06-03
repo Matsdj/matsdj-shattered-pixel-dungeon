@@ -173,11 +173,6 @@ public class EtherealChains extends Artifact {
 		if (chargeUse > charge) {
 			GLog.w( Messages.get(this, "no_charge") );
 			return;
-		} else {
-			charge -= chargeUse;
-			Invisibility.dispel(hero);
-			Talent.onArtifactUsed(hero);
-			updateQuickslot();
 		}
 		
 		hero.busy();
@@ -196,6 +191,11 @@ public class EtherealChains extends Artifact {
 						Dungeon.observe();
 						GameScene.updateFog();
 						hero.spendAndNext(1f);
+
+						charge -= chargeUse;
+						Invisibility.dispel(hero);
+						Talent.onArtifactUsed(hero);
+						updateQuickslot();
 					}
 				}));
 				hero.next();
@@ -238,11 +238,6 @@ public class EtherealChains extends Artifact {
 		if (chargeUse > charge){
 			GLog.w( Messages.get(EtherealChains.class, "no_charge") );
 			return;
-		} else {
-			charge -= chargeUse;
-			Invisibility.dispel(hero);
-			Talent.onArtifactUsed(hero);
-			updateQuickslot();
 		}
 		
 		hero.busy();
@@ -260,6 +255,11 @@ public class EtherealChains extends Artifact {
 						hero.spendAndNext(1f);
 						Dungeon.observe();
 						GameScene.updateFog();
+
+						charge -= chargeUse;
+						Invisibility.dispel(hero);
+						Talent.onArtifactUsed(hero);
+						updateQuickslot();
 					}
 				}));
 				hero.next();

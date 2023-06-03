@@ -95,13 +95,15 @@ public class Ghost extends NPC {
 	protected Char chooseEnemy() {
 		return null;
 	}
-	
+
 	@Override
 	public void damage( int dmg, Object src ) {
+		//do nothing
 	}
-	
+
 	@Override
-	public void add( Buff buff ) {
+	public boolean add( Buff buff ) {
+		return false;
 	}
 	
 	@Override
@@ -313,8 +315,12 @@ public class Ghost extends NPC {
 				}
 				//50%:tier2, 30%:tier3, 15%:tier4, 5%:tier5
 				int wepTier = Random.chances(new float[]{0, 0, 10, 6, 3, 1});
-				Generator.Category c = Generator.wepTiers[wepTier - 1];
-				weapon = (MeleeWeapon) Reflection.newInstance(c.classes[Random.chances(c.probs)]);
+				weapon = (Weapon) Generator.randomUsingDefaults(Generator.wepTiers[wepTier - 1]);
+
+				//clear weapon's starting properties
+				weapon.level(0);
+				weapon.enchant(null);
+				weapon.cursed = false;
 
 				//50%:+0, 30%:+1, 15%:+2, 5%:+3
 				float itemLevelRoll = Random.Float();

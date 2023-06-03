@@ -143,8 +143,9 @@ public class Ratmogrify extends ArmorAbility {
 			//preserve champion enemy buffs
 			HashSet<ChampionEnemy> champBuffs = ch.buffs(ChampionEnemy.class);
 			for (ChampionEnemy champ : champBuffs){
-				ch.remove(champ);
-				ch.sprite.clearAura();
+				if (ch.remove(champ)) {
+					ch.sprite.clearAura();
+				}
 			}
 
 			Actor.remove( ch );
@@ -212,6 +213,9 @@ public class Ratmogrify extends ArmorAbility {
 		}
 
 		public Mob getOriginal(){
+			original.HP = HP;
+			original.pos = pos;
+			original.clearTime();
 			return original;
 		}
 
