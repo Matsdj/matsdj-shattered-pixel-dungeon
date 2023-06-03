@@ -21,8 +21,20 @@ Master Thieves Armband makes them vulnerable instead of cripple to differentiate
 
 Talisman of Foresight now provides/improves mind vision like the tier 2 skill from the Huntress, it goes up to 5 tiles of mind vision at level 10. You also gain 10% increased evasion per level
 
+##Talents
+-
+
 ##Wands
 Wand of light always blinds from level 3 onwards (3-lvl in 5 chance of failing)
+
+##Enemies
+-
+
+##Crafting/Consumables
+-
+
+##Other
+-
 
 # Future Changes:
 ##Rings
@@ -53,8 +65,8 @@ Rework some talents that aren't very interresting or usefull.
 
 ##Wands
 Wands that doen't feel strong to use to me:
-	Wand of lightning
-	Wand of Disintegration
+	Wand of lightning (Enemies build up charge and get paralized at max charge)
+	Wand of Disintegration (Damage buff)
 
 ##Enemies
 Make enemies more different:
@@ -69,7 +81,7 @@ Some items I never craft/use these should be buffed/changed
 ##Other
 Stewed Meat needs a reason to exist.
 
-Suprise attacks shouldn't work if they are to close to you.
+Suprise attacks shouldn't work if they are to close to you. In other words enemies have short term memory of where you were and wont be suprised if they go through a door after you
 
 Add an extra row of quickslots
 
