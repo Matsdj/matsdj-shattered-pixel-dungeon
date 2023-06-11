@@ -139,9 +139,9 @@ public enum HeroClass {
 			}
 		}
 
-		TalismanOfForesight t = new TalismanOfForesight();
-		t.collect();
-		t.level(10);
+		//TalismanOfForesight t = new TalismanOfForesight();
+		//t.collect();
+		//t.level(10);
 	}
 
 	public Badges.Badge masteryBadge() {

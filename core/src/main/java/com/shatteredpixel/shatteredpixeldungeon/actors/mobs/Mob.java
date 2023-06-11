@@ -865,7 +865,9 @@ public abstract class Mob extends Char {
 	}
 	
 	public void rollToDropLoot(){
-		if (Dungeon.hero.lvl > maxLvl + 2) return;
+		//Al enemies now always drop gold
+		Gold gold = new Gold(Random.NormalIntRange(1, maxLvl));
+		Dungeon.level.drop(gold, pos).sprite.drop();
 
 		MasterThievesArmband.StolenTracker stolen = buff(MasterThievesArmband.StolenTracker.class);
 		if (stolen == null || !stolen.itemWasStolen()) {

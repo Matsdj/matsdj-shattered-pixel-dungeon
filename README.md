@@ -35,6 +35,9 @@ Wand of light always blinds from level 3 onwards (3-lvl in 5 chance of failing)
 
 ##Other
 Instead of gaining no xp when to high level get: xp / (1+excessLevel)
+Level Cap is 100
+Enemies no longer stop dropping loot if you are too high level. (this used to be if you're 2 above max level of enemy)
+Enemies now always drop 1-Maxlevel gold. (Maxlevel being the level after which they will give diminishing amounts of xp) (Rat.maxlvl = 5, Bat.maxlvl = 15)
 
 # Future Changes:
 ##Rings
@@ -85,9 +88,20 @@ Suprise attacks shouldn't work if they are to close to you. In other words enemi
 
 Add an extra row of quickslots
 
-You can identify items if you've gained 0 xp recently
+Unlimmited Inventory slots
 
-No more level cap of 30
+Beter positive feedback
+ Enemies drop items atleast 50% of the time
+ Leveling from the first few enemies
+ 
+Blacksmith should work aditive with upgrades
+Rework some talents to make them scale into the late game
+Wand of frost should freeze if the enemy is chilled
+Talisman of foresight reveales if any item has a curse on use
+Sacrificial altara thingies should give upgraded items
+more natural regen
+Some secret rooms are disapointing
+	More gold in gold rooms
 
 ##The big future change
 Town above ground to return to and heal up
