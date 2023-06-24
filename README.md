@@ -51,6 +51,7 @@ Instead of gaining no xp when to high level get: xp / (1+excessLevel)
 Level Cap is 100
 Blacksmith now works aditive with upgrades, meaning a level 2 weapon + level 2 weapon = level 4
 And the Blacksmith can do unlimited upgrades
+10 extra inventory slots
 
 # Future Changes:
 ##Rings
@@ -105,14 +106,13 @@ Suprise attacks shouldn't work if they are to close to you. In other words enemi
 
 Add more quickslots
 
-Increase Inventory slots
-
 Beter positive feedback
  Enemies drop items atleast 50% of the time
  Leveling from the first few enemies
 
 Rework some talents to make them scale into the late game
-Sacrificial altara thingies should give upgraded items
+Sacrificial altar thingies should give upgraded items (apparently the code makes it seem like they are supposed to be upgraded)
+	Sacrificial altars should be repeatable
 more natural regen
 Some secret rooms are disapointing
 	More gold in gold rooms
