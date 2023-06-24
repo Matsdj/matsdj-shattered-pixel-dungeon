@@ -197,7 +197,7 @@ public class Piranha extends Mob {
 	}
 
 	public static Piranha random(){
-		if (Random.Int(50) == 0){
+		if (Random.Int(10) == 0){
 			return new PhantomPiranha();
 		} else {
 			return new Piranha();

@@ -86,7 +86,7 @@ public class Necromancer extends Mob {
 	
 	@Override
 	public float lootChance() {
-		return super.lootChance() * ((6f - Dungeon.LimitedDrops.NECRO_HP.count) / 6f);
+		return super.lootChance(); //* ((6f - Dungeon.LimitedDrops.NECRO_HP.count) / 6f)
 	}
 	
 	@Override

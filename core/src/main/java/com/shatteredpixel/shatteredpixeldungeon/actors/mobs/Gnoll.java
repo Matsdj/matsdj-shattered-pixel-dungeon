@@ -23,6 +23,7 @@ package com.shatteredpixel.shatteredpixeldungeon.actors.mobs;
 
 import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
 import com.shatteredpixel.shatteredpixeldungeon.items.Gold;
+import com.shatteredpixel.shatteredpixeldungeon.items.food.MysteryMeat;
 import com.shatteredpixel.shatteredpixeldungeon.sprites.GnollSprite;
 import com.watabou.utils.Random;
 
@@ -37,8 +38,8 @@ public class Gnoll extends Mob {
 		EXP = 2;
 		maxLvl = 8;
 		
-		loot = Gold.class;
-		lootChance = 0.5f;
+		loot = Random.oneOf(Gold.class, new MysteryMeat());
+		lootChance = 1f;
 	}
 	
 	@Override

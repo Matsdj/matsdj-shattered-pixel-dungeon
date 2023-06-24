@@ -51,7 +51,7 @@ public abstract class Shaman extends Mob {
 		maxLvl = 16;
 		
 		loot = Generator.Category.WAND;
-		lootChance = 0.03f; //initially, see lootChance()
+		lootChance = 0.1f; //initially, see lootChance()
 	}
 	
 	@Override
@@ -79,7 +79,7 @@ public abstract class Shaman extends Mob {
 	public float lootChance() {
 		//each drop makes future drops 1/3 as likely
 		// so loot chance looks like: 1/33, 1/100, 1/300, 1/900, etc.
-		return super.lootChance() * (float)Math.pow(1/3f, Dungeon.LimitedDrops.SHAMAN_WAND.count);
+		return super.lootChance(); //* (float)Math.pow(1/3f, Dungeon.LimitedDrops.SHAMAN_WAND.count)
 	}
 
 	@Override
@@ -173,6 +173,7 @@ public abstract class Shaman extends Mob {
 	public static class PurpleShaman extends Shaman {
 		{
 			spriteClass = ShamanSprite.Purple.class;
+			lootChance = .5f;
 		}
 		
 		@Override

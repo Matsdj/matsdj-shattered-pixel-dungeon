@@ -30,10 +30,18 @@ Wand of light always blinds from level 3 onwards (3-lvl in 5 chance of failing)
 ##Enemies
 Enemies no longer stop dropping loot if you are too high level. (this used to be if you're 2 above max level of enemy)
 Enemies now always drop 1-Maxlevel gold. (Maxlevel being the level after which they will give diminishing amounts of xp) (Rat.maxlvl = 5, Bat.maxlvl = 15)
+Alternate versions of mobs now happen 5 times more often
+	Armored statue happens 1 in 3 from 1 in 10
 
 Rats have a 20% chance to drop meat
 Crabs have a 40% chance to drop meat
-
+Snake has a 50% chance to drop a seed
+Gnoll is guarenteed to drop either gold or meat
+swarm of flies no longer has a hp potion cap of 5
+Shamans now have a 10% chance to drop a wand instead of 3%
+	Purple Shamans (20% of shamans) have a 50% chance to drop a wand
+DM201 has a 50% chance to drop something instead of 12.5%
+Slimes, Skeletons, Guards, Bats, Shamans, DM200, Warlocks and Golems no longer have decreasing chances to drop something
 
 ##Crafting/Consumables
 -

@@ -384,7 +384,7 @@ public abstract class Elemental extends Mob {
 	}
 	
 	public static Class<? extends Elemental> random(){
-		if (Random.Int( 50 ) == 0){
+		if (Random.Int( 10 ) == 0){
 			return ChaosElemental.class;
 		}
 		
