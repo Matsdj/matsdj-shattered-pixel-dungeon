@@ -153,20 +153,21 @@ public class Blacksmith extends NPC {
 				}
 				
 			}
-		} else if (!Quest.reforged) {
-			
+		} else
+			//if (!Quest.reforged)
+			{
 			Game.runOnRenderThread(new Callback() {
 				@Override
 				public void call() {
 					GameScene.show( new WndBlacksmith( Blacksmith.this, Dungeon.hero ) );
 				}
 			});
-			
-		} else {
-			
-			tell( Messages.get(this, "get_lost") );
-			
 		}
+		//else {
+		//
+		//	tell( Messages.get(this, "get_lost") );
+		//
+		//}
 
 		return true;
 	}
@@ -242,9 +243,9 @@ public class Blacksmith extends NPC {
 
 		//preserves enchant/glyphs if present
 		if (first instanceof Weapon && ((Weapon) first).hasGoodEnchant()){
-			((Weapon) first).upgrade(true);
+			first.upgrade(second.trueLevel());
 		} else if (first instanceof Armor && ((Armor) first).hasGoodGlyph()){
-			((Armor) first).upgrade(true);
+			first.upgrade(second.trueLevel());
 		} else {
 			first.upgrade();
 		}
@@ -252,7 +253,7 @@ public class Blacksmith extends NPC {
 		Badges.validateItemLevelAquired( first );
 		Item.updateQuickslot();
 		
-		Quest.reforged = true;
+		//Quest.reforged = true;
 		
 		Notes.remove( Notes.Landmark.TROLL );
 	}

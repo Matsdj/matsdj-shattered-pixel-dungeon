@@ -28,7 +28,12 @@ Talisman of Foresight now provides/improves mind vision like the tier 2 skill fr
 Wand of light always blinds from level 3 onwards (3-lvl in 5 chance of failing)
 
 ##Enemies
--
+Enemies no longer stop dropping loot if you are too high level. (this used to be if you're 2 above max level of enemy)
+Enemies now always drop 1-Maxlevel gold. (Maxlevel being the level after which they will give diminishing amounts of xp) (Rat.maxlvl = 5, Bat.maxlvl = 15)
+
+Rats have a 20% chance to drop meat
+Crabs have a 40% chance to drop meat
+
 
 ##Crafting/Consumables
 -
@@ -36,8 +41,8 @@ Wand of light always blinds from level 3 onwards (3-lvl in 5 chance of failing)
 ##Other
 Instead of gaining no xp when to high level get: xp / (1+excessLevel)
 Level Cap is 100
-Enemies no longer stop dropping loot if you are too high level. (this used to be if you're 2 above max level of enemy)
-Enemies now always drop 1-Maxlevel gold. (Maxlevel being the level after which they will give diminishing amounts of xp) (Rat.maxlvl = 5, Bat.maxlvl = 15)
+Blacksmith now works aditive with upgrades, meaning a level 2 weapon + level 2 weapon = level 4
+And the Blacksmith can do unlimited upgrades
 
 # Future Changes:
 ##Rings
@@ -63,6 +68,8 @@ Timekeeper's Hourglass should have the ability to revert the user to a state a f
 
 Unstable Spellbook should get a third option which allows you to delay the casting of the scroll at the cost of a charge.
 
+Talisman of foresight reveales if any item has a curse on use
+
 ##Talents
 Rework some talents that aren't very interresting or usefull.
 
@@ -70,6 +77,7 @@ Rework some talents that aren't very interresting or usefull.
 Wands that doen't feel strong to use to me:
 	Wand of lightning (Enemies build up charge and get paralized at max charge)
 	Wand of Disintegration (Damage buff)
+Wand of frost should freeze if the enemy is chilled
 
 ##Enemies
 Make enemies more different:
@@ -79,29 +87,44 @@ Make enemies more different:
 Elementals can drop Embers as a rare drop
 
 ##Crafting/Consumables
-Some items I never craft/use these should be buffed/changed
+Some items I never craft/use these should be buffed/changed.
+	I think giving a lot of the expensive ones uses instead of durations would help
 
 ##Other
 Stewed Meat needs a reason to exist.
 
 Suprise attacks shouldn't work if they are to close to you. In other words enemies have short term memory of where you were and wont be suprised if they go through a door after you
 
-Add an extra row of quickslots
+Add more quickslots
 
-Unlimmited Inventory slots
+Increase Inventory slots
 
 Beter positive feedback
  Enemies drop items atleast 50% of the time
  Leveling from the first few enemies
- 
-Blacksmith should work aditive with upgrades
+
 Rework some talents to make them scale into the late game
-Wand of frost should freeze if the enemy is chilled
-Talisman of foresight reveales if any item has a curse on use
 Sacrificial altara thingies should give upgraded items
 more natural regen
 Some secret rooms are disapointing
 	More gold in gold rooms
+	More stuff in rune rooms (maybe wand dust stuff)
+	
+Make grass regrow over time
+Add Challenges
+	Grind Mode: 
+		Enemies scale harder (increase in strength more as you go down)
+		enemies drop more food and have a chance to drop upgrade scrolls
+		Dubbel drop chance?
+		Shops refill after 100 turns
+	More alts (50% chance for an alt version of a mob)
+		
+Change Challenges
+	On Diet is boring
+	Pharmacophobia just removes healing potions which I think is boring
+	Barren land is boring as it just removes plant stuff
+	Forbidden Runes sucks because upgrade scrolls are my favourite thing as progression.
+	
 
 ##The big future change
 Town above ground to return to and heal up
