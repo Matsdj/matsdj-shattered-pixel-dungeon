@@ -51,8 +51,9 @@ public class Bag extends Item implements Iterable<Item> {
 	
 	public ArrayList<Item> items = new ArrayList<>();
 
+	public static final int DEFAULT_CAPACITY = 30;
 	public int capacity(){
-		return 20; // default container size
+		return DEFAULT_CAPACITY; // default container size
 	}
 	
 	@Override
