@@ -243,11 +243,11 @@ public class Blacksmith extends NPC {
 
 		//preserves enchant/glyphs if present
 		if (first instanceof Weapon && ((Weapon) first).hasGoodEnchant()){
-			first.upgrade(second.trueLevel());
+			first.upgrade(second.trueLevel()+1);
 		} else if (first instanceof Armor && ((Armor) first).hasGoodGlyph()){
-			first.upgrade(second.trueLevel());
+			first.upgrade(second.trueLevel()+1);
 		} else {
-			first.upgrade();
+			first.upgrade(second.trueLevel()+1);
 		}
 		Dungeon.hero.spendAndNext( 2f );
 		Badges.validateItemLevelAquired( first );
