@@ -259,6 +259,20 @@ public class MasterThievesArmband extends Artifact {
 			if (cursed && Dungeon.gold > 0 && Random.Int(5) == 0){
 				Dungeon.gold--;
 			}
+			if (!cursed && target.buff(MagicImmune.class) == null && charge < chargeCap){
+				//Also gains a charge every 100 turns
+				float turnsToCharge = 100;
+				turnsToCharge /= RingOfEnergy.artifactChargeMultiplier(target);
+				float chargeToGain = (1f / turnsToCharge);
+				partialCharge += chargeToGain;
+				if (partialCharge >= 1) {
+					charge++;
+					partialCharge -= 1;
+					if (charge == chargeCap){
+						partialCharge = 0;
+					}
+				}
+			}
 
 			spend(TICK);
 			return true;

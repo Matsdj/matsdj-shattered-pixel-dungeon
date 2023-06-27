@@ -230,6 +230,19 @@ public class AlchemistsToolkit extends Artifact {
 				}
 				updateQuickslot();
 			}
+			else {
+				float turnsToCharge = 100;
+				turnsToCharge /= RingOfEnergy.artifactChargeMultiplier(target);
+				float chargeToGain = (1f / turnsToCharge);
+				partialCharge += chargeToGain;
+				if (partialCharge >= 1) {
+					charge++;
+					partialCharge -= 1;
+					if (charge == chargeCap){
+						partialCharge = 0;
+					}
+				}
+			}
 
 			spend(TICK);
 			return true;

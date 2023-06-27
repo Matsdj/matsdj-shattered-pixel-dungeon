@@ -290,6 +290,12 @@ public class HornOfPlenty extends Artifact {
 				chargeGain /= Hunger.STARVING/5;
 				partialCharge += chargeGain;
 
+				//Also gains a charge every 100 turns
+				float turnsToCharge = 100;
+				turnsToCharge /= RingOfEnergy.artifactChargeMultiplier(target);
+				float chargeToGain = (1f / turnsToCharge);
+				partialCharge += chargeToGain;
+
 				//charge is in increments of 1/5 max hunger value.
 				while (partialCharge >= 1) {
 					charge++;

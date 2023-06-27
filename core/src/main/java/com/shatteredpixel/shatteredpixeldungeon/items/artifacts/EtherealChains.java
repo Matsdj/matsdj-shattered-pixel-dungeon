@@ -315,6 +315,12 @@ public class EtherealChains extends Artifact {
 				float chargeGain = (1 / (40f - (chargeTarget - charge)*2f));
 				chargeGain *= RingOfEnergy.artifactChargeMultiplier(target);
 				partialCharge += chargeGain;
+
+				//Also gains a charge every 100 turns
+				float turnsToCharge = 100;
+				turnsToCharge /= RingOfEnergy.artifactChargeMultiplier(target);
+				float chargeToGain = (1f / turnsToCharge);
+				partialCharge += chargeToGain;
 			} else if (cursed && Random.Int(100) == 0){
 				Buff.prolong( target, Cripple.class, 10f);
 			}

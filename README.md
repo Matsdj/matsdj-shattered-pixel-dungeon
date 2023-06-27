@@ -5,6 +5,7 @@ A Roguelike RPG, with randomly generated levels, items, enemies, and traps! Base
 This is just my own version of shattered pixel dungeon where I make changes I feel like.
 
 # Finished changes:
+
 ##Rings
 Ring of accuracy is very uninterresting to level up with scrolls so it could get crit at higher levels or increase minimum damage of your weapons.
 New ring of accuracy effects:
@@ -55,7 +56,7 @@ And the Blacksmith can do unlimited upgrades
 
 # Future Changes:
 ##Rings
-Ring of Elements is also very uninteresting in my opinion because it lacks interresting synergy with other items. having an support item that does consisten magic damage back to the user inexchange for something could be interresting. or an item that encourages taking magic damage somehow for example the unstable spellbook casts a random offensive spell (with random targets) when you take/block enough magic damage. or the Timekeeper's Hourglas gains charges from taking/blocking magic damage.
+Ring of Elements is also very uninteresting in my opinion because it lacks interresting synergy with other items. having an support item that does consisten magic damage back to the user inexchange for something could be interresting. or an item that encourages taking magic damage somehow for example the unstable spellbook casts a random offensive spell (with random targets) when you take/block enough magic damage. or the Timekeeper's Hourglass gains charges from taking/blocking magic damage.
 
 Ring of evasion is also not something I ever use for a similar reason as the ring of elements. A fix could be to make a skill that does something whenever you dodge an attack.
 	Both the Cloack of shadows and the master thieves armband gain charges when you dodge.
@@ -69,7 +70,14 @@ Ring of Might is also uninterresting but mostly because there aren't many things
 Ring of Tenacity has a similar problem to ring of elements.
 
 ##Artifacts
-Alchemist toolkit would be more interresting if it added new drops from enemies and grass that could be crafted into items. It also would be more usable if consumable items where more consisten/less conditional. Maybe an extra option to use the extra charge if you have a lot, like energysing the player at the cost of 10 charge.
+Artifacts that gain charges from the heros exp should also gain a charge every 100 turns or smth
+	Thieves armband, Ethereal Chains, Horn of plenty, Alchemist Toolkit
+
+Alchemist toolkit
+	would be more interresting if it added new drops from enemies and grass that could be crafted into items.
+	Maybe an extra option to use the extra charge if you have a lot
+		like energysing the player at the cost of 10 charge. 
+		Or fabricating a random potion or scroll
 
 Chalice of blood is not very interresting but very strong not sure how to fix it though.
 
@@ -81,12 +89,26 @@ Talisman of foresight reveales if any item has a curse on use
 
 ##Talents
 Rework some talents that aren't very interresting or usefull.
+Replace a boring talent with an enemy drop chance for class specific drops
+	Warrior: Potions
+	Mage: Arcane Resin, Scrolls
+	Rogue: Runes
+	Huntress: throwing weapon repair material, seeds
+	Duelist: 
 
 ##Wands
 Wands that doen't feel strong to use to me:
 	Wand of lightning (Enemies build up charge and get paralized at max charge)
 	Wand of Disintegration (Damage buff)
 Wand of frost should freeze if the enemy is chilled
+
+Wand of frost can be used on self do the following: OnFire->Neutral->Cold->Frozen
+Wand of fireblast can be used on self do the following: Cold->Neutral->OnFire
+These new abilities would allow for harsher enviroments that are constantly cold/hot.
+	This would need a new inbetween effect called hot.
+
+##Weapons & Armor
+Crossbow should increase throwing dart accuracy
 
 ##Enemies
 Make enemies more different:
@@ -98,6 +120,14 @@ Elementals can drop Embers as a rare drop
 ##Crafting/Consumables
 Some items I never craft/use these should be buffed/changed.
 	I think giving a lot of the expensive ones uses instead of durations would help
+New recipy to turn a seed into its potion form for 8 energy
+New recipy to turn the stones into their scroll versions for 8 energy
+
+Some specific anti debuff items:
+	Cure for posion (new drop from spider?)
+
+Potion of healing is so strong that it makes every other potion feel mostly irrelevant (this extra problematic because I removed the drop cap)
+	Probably divide the healing by 2 or 4
 
 ##Other
 Stewed Meat needs a reason to exist.
@@ -111,20 +141,25 @@ Beter positive feedback
  Leveling from the first few enemies
 
 Rework some talents to make them scale into the late game
+	Wizard can sense if something is cursed
 Sacrificial altar thingies should give upgraded items (apparently the code makes it seem like they are supposed to be upgraded)
-	Sacrificial altars should be repeatable
 more natural regen
+
 Some secret rooms are disapointing
 	More gold in gold rooms
 	More stuff in rune rooms (maybe wand dust stuff)
+		guarenteed enchant rune
 	
-Make grass regrow over time
 Add Challenges
-	Grind Mode: 
+	Grind Mode:
+		Start with a ring of wealth
 		Enemies scale harder (increase in strength more as you go down)
 		enemies drop more food and have a chance to drop upgrade scrolls
 		Dubbel drop chance?
-		Shops refill after 100 turns
+		Shops refill after 500 turns
+		Make grass regrow over time (1/20 chance per turn) (1/100 chance to turn to a random plant)
+		Make well's refill
+		Sacrificial altars should be repeatable
 	More alts (50% chance for an alt version of a mob)
 		
 Change Challenges
@@ -132,7 +167,34 @@ Change Challenges
 	Pharmacophobia just removes healing potions which I think is boring
 	Barren land is boring as it just removes plant stuff
 	Forbidden Runes sucks because upgrade scrolls are my favourite thing as progression.
-	
+
+##Triggers and Effects
+Rework lvl 5+ rings to have triggers which trigger all equiped lvl 10 artifact effects
+Triggers
+Ring of Accuracy: Triggers when you hit something with ranged or melee
+		Arcana: Triggers when an enchantment is activated
+		Elementals: Triggers when you take magic/effect damage
+		Energy: Triggers when you use a wand or artifact
+		Evasion: Triggers when you dodge an attack
+		Force: Triggers when you melee attack trigger again twice if the attack took longer then a turn
+		Furor: Triggers every two melee attacks
+		Haste: Triggers when you move 10 tiles
+		Might: Triggers when losing health
+		Sharpshooting: Triggers on ranged attack
+		Tenacity: Triggers on being hit with a physical damage
+		Wealth(S): Triggers thrice on Gold pickup
+Effects (If no enemy target is given and the effect does require one it will pick a random enemy within a radius of 3)
+	Alchemist's Toolkit: 10% chance to gain a basic Potion, Seed, Scroll or 5 energy (this excludes Upgrade and strength)
+	Chalice of blood: Deal (HeroLvl/2) damage to Enemy and Heal self for 10% of the damage dealt
+	Cloack of shadows: Blinds enemies within a 2 tile radius for 2 turns and makes them vulnerable for 2 turn
+	Dried Rose: gain (MaxHealth*.02) as shield
+	Ethereal Chains: Cripple enemies + 20% chance to gain a charge on Ethereal Chains
+	Horn of plenty: Have a 20% chance to gain a charge and apply bleed to enemies (no charge is gained without enemy)
+	Master Thieves Armband: Open Locked chests and doors within a radius of 2 and increase drop chance of enemy by 50% (stacking)
+	Footwear of Nature: 20% chance to apply plant effect. (positive plant effect on allies and negative plant effects on enemies)
+	Talisman of Foresight: Reveal Traps in a radius of 1 around you and the enemy and have a 50% chance to identify an Item in your inventory
+	Timekeepers Hourglass: Gain a charge on a random wand or artifact that doesn't have all charges (charge = 10% on some artifacts)
+	Unstable Spellbook: 5% chance to obtain a random scroll or 20% to gain 1 charge
 
 ##The big future change
 Town above ground to return to and heal up
@@ -161,34 +223,4 @@ More species difercity and more weaknesses and strategies around different speci
 Generate areas with consistent counters for example a snowy area where every enemy is weak to fire damage
 
 Weapons aren't found but made in town with materials
-
-Interresting synergy ideas which could be equipment or skills
-	A few categories:
-		When you take damage
-		When you deal damage with melee or ranged (on hit)
-			Apply an effect (bleed, cripple, fire, frost, etc)
-			Gain Mana
-			Heal x amount
-		When you deal magic damage
-		When you heal
-		When you lose all of your shield
-		When you gain mana
-		When you activate an artifact
-	A few things that happen because of those categories
-	When you run out of shield damage al enemies around you
-	Excess regen becomes shield
-	new Onhit effects
-		apply an effect 
-		gain mana
-		spawn toxic gas
-		etc
-	Ranged weapons apply onhit to x nearby targets
-	Melee weapons apply onhit to enemies within x tiles
-	Poison & toxic gas Imunnity
-	When you take damage you create a small amount of toxic gas
-	When enemies take fire damage they ignite nearby enemies
-	You're immune to fire damage and Fire no longer burns Items
-	Standing in fire regens your mana.
-	
-	Stepping on grass heals you
 	
