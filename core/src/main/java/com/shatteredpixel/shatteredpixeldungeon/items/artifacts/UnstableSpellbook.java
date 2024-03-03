@@ -3,7 +3,7 @@
  * Copyright (C) 2012-2015 Oleg Dolya
  *
  * Shattered Pixel Dungeon
- * Copyright (C) 2014-2023 Evan Debenham
+ * Copyright (C) 2014-2024 Evan Debenham
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,8 +25,8 @@ import com.shatteredpixel.shatteredpixeldungeon.Assets;
 import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
 import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Blindness;
 import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Buff;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.LockedFloor;
 import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.MagicImmune;
+import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Regeneration;
 import com.shatteredpixel.shatteredpixeldungeon.actors.hero.Hero;
 import com.shatteredpixel.shatteredpixeldungeon.actors.hero.Talent;
 import com.shatteredpixel.shatteredpixeldungeon.effects.particles.ElmoParticle;
@@ -153,6 +153,7 @@ public class UnstableSpellbook extends Artifact {
 							handler.detach();
 							if (index == 1){
 								Scroll scroll = Reflection.newInstance(ExoticScroll.regToExo.get(fScroll.getClass()));
+								curItem = scroll;
 								charge--;
 								scroll.anonymize();
 								scroll.doRead();
@@ -288,11 +289,10 @@ public class UnstableSpellbook extends Artifact {
 	public class bookRecharge extends ArtifactBuff{
 		@Override
 		public boolean act() {
-			LockedFloor lock = target.buff(LockedFloor.class);
 			if (charge < chargeCap
 					&& !cursed
 					&& target.buff(MagicImmune.class) == null
-					&& (lock == null || lock.regenOn())) {
+					&& Regeneration.regenOn()) {
 				//120 turns to charge at full, 80 turns to charge at 0/8
 				float chargeGain = 1 / (120f - (chargeCap - charge)*5f);
 				chargeGain *= RingOfEnergy.artifactChargeMultiplier(target);

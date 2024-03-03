@@ -3,7 +3,7 @@
  * Copyright (C) 2012-2015 Oleg Dolya
  *
  * Shattered Pixel Dungeon
- * Copyright (C) 2014-2023 Evan Debenham
+ * Copyright (C) 2014-2024 Evan Debenham
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -73,6 +73,11 @@ public class Bag extends Item implements Iterable<Item> {
 
 		grabItems(container);
 
+		//if there are any quickslot placeholders that match items in this bag, assign them
+		for (Item item : items) {
+			Dungeon.quickslot.replacePlaceholder(item);
+		}
+
 		if (super.collect( container )) {
 			
 			owner = container.owner;
@@ -88,8 +93,9 @@ public class Bag extends Item implements Iterable<Item> {
 	@Override
 	public void onDetach( ) {
 		this.owner = null;
-		for (Item item : items)
+		for (Item item : items) {
 			Dungeon.quickslot.clearItem(item);
+		}
 		updateQuickslot();
 	}
 
@@ -169,7 +175,7 @@ public class Bag extends Item implements Iterable<Item> {
 
 	public boolean canHold( Item item ){
 		if (!loading && owner != null && owner.buff(LostInventory.class) != null
-			&& !item.keptThoughLostInvent){
+			&& !item.keptThroughLostInventory()){
 			return false;
 		}
 

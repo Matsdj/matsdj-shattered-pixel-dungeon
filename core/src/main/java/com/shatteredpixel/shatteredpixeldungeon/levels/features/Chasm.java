@@ -3,7 +3,7 @@
  * Copyright (C) 2012-2015 Oleg Dolya
  *
  * Shattered Pixel Dungeon
- * Copyright (C) 2014-2023 Evan Debenham
+ * Copyright (C) 2014-2024 Evan Debenham
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -38,10 +38,10 @@ import com.shatteredpixel.shatteredpixeldungeon.levels.rooms.special.WeakFloorRo
 import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
 import com.shatteredpixel.shatteredpixeldungeon.scenes.GameScene;
 import com.shatteredpixel.shatteredpixeldungeon.scenes.InterlevelScene;
+import com.shatteredpixel.shatteredpixeldungeon.scenes.PixelScene;
 import com.shatteredpixel.shatteredpixeldungeon.sprites.MobSprite;
 import com.shatteredpixel.shatteredpixeldungeon.utils.GLog;
 import com.shatteredpixel.shatteredpixeldungeon.windows.WndOptions;
-import com.watabou.noosa.Camera;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.Image;
 import com.watabou.noosa.audio.Sample;
@@ -59,7 +59,7 @@ public class Chasm implements Hero.Doom {
 			@Override
 			public void call() {
 				GameScene.show(
-						new WndOptions( new Image(Dungeon.level.tilesTex(), 48, 48, 16, 16),
+						new WndOptions( new Image(Dungeon.level.tilesTex(), 176, 16, 16, 16),
 								Messages.get(Chasm.class, "chasm"),
 								Messages.get(Chasm.class, "jump"),
 								Messages.get(Chasm.class, "yes"),
@@ -138,7 +138,7 @@ public class Chasm implements Hero.Doom {
 			return;
 		}
 		
-		Camera.main.shake( 4, 1f );
+		PixelScene.shake( 4, 1f );
 
 		Dungeon.level.occupyCell(hero );
 		Buff.prolong( hero, Cripple.class, Cripple.DURATION );

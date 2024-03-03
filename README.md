@@ -7,13 +7,15 @@ This is just my own version of shattered pixel dungeon where I make changes I fe
 # Finished changes:
 
 ##Rings
-Ring of accuracy is very uninterresting to level up with scrolls so it could get crit at higher levels or increase minimum damage of your weapons.
+
+Ring of accuracy is very uninterresting to level up with scrolls so I thought it would be interresting to make it increase the minimum damage of your weapons.
 New ring of accuracy effects:
 accuracy increase of 1 + .5 * levelofring (at level 10 this would give you a 96% change to hit most things I think)
 minimum damage of weapons would have guarenteed max damage at level 8 giving you 12.5% increase in minimum damage at every level
 chance. Beyond level 8 it is a 12.5% increase in total damage
 
 ##Artifacts
+
 Ethereal Chains now cripple enemies just like the Guard enemy to make the pulling of enemies better
 
 Horn of plenty applies well fed when you exceed full hunger to make using it at max stacks more usefull
@@ -24,13 +26,17 @@ Talisman of Foresight now provides/improves mind vision like the tier 2 skill fr
 
 Artifacts that gain charges from the heros exp also gain a charge every 100 turns
 	Thieves armband, Ethereal Chains, Horn of plenty, Alchemist Toolkit
+
 ##Talents
+
 -
 
 ##Wands
+
 Wand of light always blinds from level 3 onwards (3-lvl in 5 chance of failing)
 
 ##Enemies
+
 Enemies no longer stop dropping loot if you are too high level. (this used to be if you're 2 above max level of enemy)
 Alternate versions of mobs now happen 5 times more often
 	Armored statue happens 1 in 3 from 1 in 10
@@ -46,18 +52,19 @@ DM201 has a 50% chance to drop something instead of 12.5%
 Slimes, Skeletons, Guards, Bats, Shamans, DM200, Warlocks and Golems no longer have decreasing chances to drop something
 
 ##Crafting/Consumables
+
 Scroll of Divination now identifies 4 items when it can't identify items in your inventory
 
 ##Other
+
 Instead of gaining no xp when to high level get: xp / (1+excessLevel)
 Level Cap is 100
-Blacksmith now works aditive with upgrades, meaning a level 2 weapon + level 2 weapon = level 4
-And the Blacksmith can do unlimited upgrades
 22 extra inventory slots
 
 # Future Changes:
 
 ##Rings
+
 Ring of Elements is also very uninteresting in my opinion because it lacks interresting synergy with other items. having an support item that does consisten magic damage back to the user inexchange for something could be interresting. or an item that encourages taking magic damage somehow for example the unstable spellbook casts a random offensive spell (with random targets) when you take/block enough magic damage. or the Timekeeper's Hourglass gains charges from taking/blocking magic damage.
 
 Ring of evasion is also not something I ever use for a similar reason as the ring of elements. A fix could be to make a skill that does something whenever you dodge an attack.
@@ -72,6 +79,7 @@ Ring of Might is also uninterresting but mostly because there aren't many things
 Ring of Tenacity has a similar problem to ring of elements.
 
 ##Artifacts
+
 Alchemist toolkit
 	would be more interresting if it added new drops from enemies and grass that could be crafted into items.
 	Maybe an extra option to use the extra charge if you have a lot
@@ -89,6 +97,7 @@ Talisman of foresight reveales if any item has a curse on use
 New artifact that can repair throwing weapons and more?
 
 ##Talents
+
 Rework some talents that aren't very interresting or usefull.
 Replace a boring talent with an enemy drop chance for class specific drops
 	Warrior: Armor, Scoll of rage
@@ -98,6 +107,7 @@ Replace a boring talent with an enemy drop chance for class specific drops
 	Duelist: Weapons
 
 ##Wands
+
 Wands that doen't feel strong to use to me:
 	Wand of lightning (Enemies build up charge and get paralized at max charge)
 	Wand of Disintegration (Damage buff)
@@ -112,10 +122,12 @@ Mage wand does additive upgrades
 Mage wands trigers enchantments with spells
 
 ##Weapons & Armor
+
 Crossbow should increase throwing dart accuracy
 
 
 ##Enemies
+
 Make enemies more different:
 	like having more variety in movement speed(never being excactly the same speed as the player)
 	Having dodgeble charge up attacks
@@ -123,6 +135,7 @@ Make enemies more different:
 Elementals can drop Embers as a rare drop
 
 ##Crafting/Consumables
+
 Some items I never craft/use these should be buffed/changed.
 	I think giving a lot of the expensive ones uses instead of durations would help
 New recipy to turn a seed into its potion form for 8 energy
@@ -138,6 +151,9 @@ The ability to create traps that don't activate when you walk over them
 	Similar to seeds but they can't be thrown and can trigger multiple times
 
 ##Other
+Make Blacksmith work aditive with upgrades, meaning a level 2 weapon + level 2 weapon = level 4
+Allow the Blacksmith to do unlimited upgrades
+
 Adding 10 inventory slots kinda broke landscape mode
 
 Stewed Meat needs a reason to exist.
@@ -277,6 +293,7 @@ Change Challenges
 	Forbidden Runes sucks because upgrade scrolls are my favourite thing as progression.
 
 ##Triggers and Effects
+
 Rework lvl 5+ rings to have triggers which trigger all equiped lvl 10 artifact effects
 Triggers
 Ring of Accuracy: Triggers when you hit something with ranged or melee
@@ -305,6 +322,7 @@ Effects (If no enemy target is given and the effect does require one it will pic
 	Unstable Spellbook: 5% chance to obtain a random scroll or 20% to gain 1 charge
 
 ##The big future change
+
 Town above ground to return to and heal up
 
 larger dungeon to explore

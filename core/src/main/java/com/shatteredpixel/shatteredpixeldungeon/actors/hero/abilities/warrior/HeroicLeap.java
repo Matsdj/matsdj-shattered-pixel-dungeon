@@ -3,7 +3,7 @@
  * Copyright (C) 2012-2015 Oleg Dolya
  *
  * Shattered Pixel Dungeon
- * Copyright (C) 2014-2023 Evan Debenham
+ * Copyright (C) 2014-2024 Evan Debenham
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,8 +36,8 @@ import com.shatteredpixel.shatteredpixeldungeon.items.wands.WandOfBlastWave;
 import com.shatteredpixel.shatteredpixeldungeon.mechanics.Ballistica;
 import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
 import com.shatteredpixel.shatteredpixeldungeon.scenes.GameScene;
+import com.shatteredpixel.shatteredpixeldungeon.scenes.PixelScene;
 import com.shatteredpixel.shatteredpixeldungeon.ui.HeroIcon;
-import com.watabou.noosa.Camera;
 import com.watabou.utils.Callback;
 import com.watabou.utils.PathFinder;
 import com.watabou.utils.Random;
@@ -68,7 +68,7 @@ public class HeroicLeap extends ArmorAbility {
 		if (target != null) {
 
 			if (hero.rooted){
-				Camera.main.shake( 1, 1f );
+				PixelScene.shake( 1, 1f );
 				return;
 			}
 
@@ -101,6 +101,7 @@ public class HeroicLeap extends ArmorAbility {
 							if (hero.hasTalent(Talent.BODY_SLAM)){
 								int damage = Random.NormalIntRange(hero.pointsInTalent(Talent.BODY_SLAM), 4*hero.pointsInTalent(Talent.BODY_SLAM));
 								damage += Math.round(hero.drRoll()*0.25f*hero.pointsInTalent(Talent.BODY_SLAM));
+								damage -= mob.drRoll();
 								mob.damage(damage, hero);
 							}
 							if (mob.pos == hero.pos + i && hero.hasTalent(Talent.IMPACT_WAVE)){
@@ -115,7 +116,7 @@ public class HeroicLeap extends ArmorAbility {
 					}
 
 					WandOfBlastWave.BlastWave.blast(dest);
-					Camera.main.shake(2, 0.5f);
+					PixelScene.shake(2, 0.5f);
 
 					Invisibility.dispel();
 					hero.spendAndNext(Actor.TICK);
