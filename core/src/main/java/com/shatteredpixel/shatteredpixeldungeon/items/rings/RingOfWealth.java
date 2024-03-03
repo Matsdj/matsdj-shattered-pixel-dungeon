@@ -111,7 +111,8 @@ public class RingOfWealth extends Ring {
 
 		//reset (if needed), decrement, and store counts
 		if (triesToDrop == Float.MIN_VALUE) {
-			triesToDrop = Random.NormalIntRange(0, 20);
+			int maxDrop = 20-(getBuffedBonus(target, Wealth.class)/2);
+			triesToDrop = Random.NormalIntRange(0, maxDrop);
 			dropsToEquip = Random.NormalIntRange(5, 10);
 		}
 

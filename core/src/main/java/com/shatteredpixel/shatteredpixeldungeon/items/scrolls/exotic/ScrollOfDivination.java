@@ -22,6 +22,8 @@
 package com.shatteredpixel.shatteredpixeldungeon.items.scrolls.exotic;
 
 import com.shatteredpixel.shatteredpixeldungeon.Assets;
+import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
+import com.shatteredpixel.shatteredpixeldungeon.actors.hero.Hero;
 import com.shatteredpixel.shatteredpixeldungeon.effects.Identification;
 import com.shatteredpixel.shatteredpixeldungeon.items.Item;
 import com.shatteredpixel.shatteredpixeldungeon.items.potions.Potion;
@@ -109,6 +111,19 @@ public class ScrollOfDivination extends ExoticScroll {
 			}
 			left --;
 			total --;
+		}
+
+		if (left > 0){
+			ArrayList<Item> unidentified = new ArrayList();
+			for (Item item: Dungeon.hero.belongings) {
+				if (!item.isIdentified()) unidentified.add(item);
+			}
+			for (int i = 0; i < left; i++) {
+				Item item = Random.element( unidentified );
+				item.identify();
+				unidentified.remove(item);
+				if (unidentified.isEmpty()) break;
+			}
 		}
 
 		if (left == 4){

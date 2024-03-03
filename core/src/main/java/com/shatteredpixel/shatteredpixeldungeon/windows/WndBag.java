@@ -56,8 +56,8 @@ public class WndBag extends WndTabbed {
 	//only one bag window can appear at a time
 	public static Window INSTANCE;
 
-	protected static final int COLS_P   = 5; //Colums in portrait
-	protected static final int COLS_L   = 5; //Colums in landscape
+	protected static final int COLS_P   = 6; //Colums in portrait
+	protected static final int COLS_L   = 8; //Colums in landscape
 	
 	protected static int SLOT_WIDTH_P   = 28;
 	protected static int SLOT_WIDTH_L   = 28;
@@ -104,7 +104,7 @@ public class WndBag extends WndTabbed {
 		slotHeight = PixelScene.landscape() ? SLOT_HEIGHT_L : SLOT_HEIGHT_P;
 
 		nCols = PixelScene.landscape() ? COLS_L : COLS_P;
-		nRows = (int)Math.ceil(35/(float)nCols); //we expect to lay out 35 slots in all cases
+		nRows = (int)Math.ceil((Bag.DEFAULT_CAPACITY + nCols)/(float)nCols);
 
 		int windowWidth = slotWidth * nCols + SLOT_MARGIN * (nCols - 1);
 		int windowHeight = TITLE_HEIGHT + slotHeight * nRows + SLOT_MARGIN * (nRows - 1);

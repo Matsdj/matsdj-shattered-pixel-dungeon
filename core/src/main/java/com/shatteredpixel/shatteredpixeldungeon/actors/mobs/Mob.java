@@ -57,22 +57,28 @@ import com.shatteredpixel.shatteredpixeldungeon.effects.Speck;
 import com.shatteredpixel.shatteredpixeldungeon.effects.Surprise;
 import com.shatteredpixel.shatteredpixeldungeon.effects.Wound;
 import com.shatteredpixel.shatteredpixeldungeon.effects.particles.ShadowParticle;
+import com.shatteredpixel.shatteredpixeldungeon.items.EquipableItem;
 import com.shatteredpixel.shatteredpixeldungeon.items.Generator;
 import com.shatteredpixel.shatteredpixeldungeon.items.Gold;
 import com.shatteredpixel.shatteredpixeldungeon.items.Item;
+import com.shatteredpixel.shatteredpixeldungeon.items.KindOfWeapon;
+import com.shatteredpixel.shatteredpixeldungeon.items.armor.Armor;
 import com.shatteredpixel.shatteredpixeldungeon.items.artifacts.MasterThievesArmband;
 import com.shatteredpixel.shatteredpixeldungeon.items.artifacts.TimekeepersHourglass;
 import com.shatteredpixel.shatteredpixeldungeon.items.rings.Ring;
 import com.shatteredpixel.shatteredpixeldungeon.items.rings.RingOfWealth;
 import com.shatteredpixel.shatteredpixeldungeon.items.stones.StoneOfAggression;
+import com.shatteredpixel.shatteredpixeldungeon.items.wands.Wand;
 import com.shatteredpixel.shatteredpixeldungeon.items.weapon.SpiritBow;
 import com.shatteredpixel.shatteredpixeldungeon.items.weapon.Weapon;
 import com.shatteredpixel.shatteredpixeldungeon.items.weapon.enchantments.Lucky;
+import com.shatteredpixel.shatteredpixeldungeon.items.weapon.melee.MeleeWeapon;
 import com.shatteredpixel.shatteredpixeldungeon.items.weapon.missiles.MissileWeapon;
 import com.shatteredpixel.shatteredpixeldungeon.items.weapon.missiles.darts.Dart;
 import com.shatteredpixel.shatteredpixeldungeon.levels.Level;
 import com.shatteredpixel.shatteredpixeldungeon.levels.features.Chasm;
 import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
+import com.shatteredpixel.shatteredpixeldungeon.plants.Earthroot;
 import com.shatteredpixel.shatteredpixeldungeon.plants.Swiftthistle;
 import com.shatteredpixel.shatteredpixeldungeon.scenes.GameScene;
 import com.shatteredpixel.shatteredpixeldungeon.sprites.CharSprite;
@@ -867,16 +873,30 @@ public abstract class Mob extends Char {
 	}
 	
 	public void rollToDropLoot(){
-		//Al enemies now always drop gold
-		Gold gold = new Gold(Random.NormalIntRange(1, maxLvl));
-		if (gold.quantity() > 0)Dungeon.level.drop(gold, pos).sprite.drop();
-
 		MasterThievesArmband.StolenTracker stolen = buff(MasterThievesArmband.StolenTracker.class);
 		if (stolen == null || !stolen.itemWasStolen()) {
-			if (Random.Float() < lootChance()) {
-				Item loot = createLoot();
-				if (loot != null) {
-					Dungeon.level.drop(loot, pos).sprite.drop();
+			Item loot = null;
+			for (int i = 0; Random.Float() < lootChance() + 1 - Math.pow(2,i) && i < 10; i++) {
+				if (loot instanceof EquipableItem || loot instanceof Wand) {
+					loot.upgrade();
+				} else {
+					Item newLoot = createLoot();
+					if (newLoot == null) continue;
+					if (loot == null) {
+						loot = newLoot;
+						if ((loot instanceof Armor && Random.Int(((Armor) loot).tier) == 0)
+								|| (loot instanceof MeleeWeapon && Random.Int(((MeleeWeapon) loot).tier) == 0)){
+								loot.identify();
+						}
+						Dungeon.level.drop(loot, pos).sprite.drop();
+					} else {
+						if (loot.getClass() == newLoot.getClass() && loot.stackable){
+							loot.quantity(loot.quantity()+Math.max(1,newLoot.quantity()));
+						} else {
+							loot = newLoot;
+							Dungeon.level.drop(loot, pos).sprite.drop();
+						}
+					}
 				}
 			}
 		}

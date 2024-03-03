@@ -227,6 +227,7 @@ public class Necromancer extends Mob {
 
 		mySkeleton = new NecroSkeleton();
 		mySkeleton.pos = summoningPos;
+		mySkeleton.lootChance = 0f;
 		GameScene.add( mySkeleton );
 		Dungeon.level.occupyCell( mySkeleton );
 		((NecromancerSprite)sprite).finishSummoning();

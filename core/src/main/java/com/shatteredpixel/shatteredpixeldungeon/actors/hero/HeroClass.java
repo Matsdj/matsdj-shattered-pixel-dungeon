@@ -46,7 +46,9 @@ import com.shatteredpixel.shatteredpixeldungeon.actors.hero.abilities.warrior.Sh
 import com.shatteredpixel.shatteredpixeldungeon.items.BrokenSeal;
 import com.shatteredpixel.shatteredpixeldungeon.items.Item;
 import com.shatteredpixel.shatteredpixeldungeon.items.Waterskin;
+import com.shatteredpixel.shatteredpixeldungeon.items.armor.Armor;
 import com.shatteredpixel.shatteredpixeldungeon.items.armor.ClothArmor;
+import com.shatteredpixel.shatteredpixeldungeon.items.armor.LeatherArmor;
 import com.shatteredpixel.shatteredpixeldungeon.items.artifacts.CloakOfShadows;
 import com.shatteredpixel.shatteredpixeldungeon.items.artifacts.TalismanOfForesight;
 import com.shatteredpixel.shatteredpixeldungeon.items.bags.VelvetPouch;
@@ -56,6 +58,8 @@ import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfInvisibili
 import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfLiquidFlame;
 import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfMindVision;
 import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfStrength;
+import com.shatteredpixel.shatteredpixeldungeon.items.rings.Ring;
+import com.shatteredpixel.shatteredpixeldungeon.items.rings.RingOfWealth;
 import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfIdentify;
 import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfLullaby;
 import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfMagicMapping;
@@ -108,6 +112,13 @@ public enum HeroClass {
 
 		new ScrollOfIdentify().identify();
 
+//		i = new RingOfWealth();
+//		i.collect();
+//		i.identify();
+//		i.upgrade(2);
+//		hero.belongings.ring = (Ring) i;
+//		hero.belongings.armor.upgrade(3);
+
 		switch (this) {
 			case WARRIOR:
 				initWarrior( hero );
@@ -138,10 +149,6 @@ public enum HeroClass {
 				}
 			}
 		}
-
-		//TalismanOfForesight t = new TalismanOfForesight();
-		//t.collect();
-		//t.level(10);
 	}
 
 	public Badges.Badge masteryBadge() {

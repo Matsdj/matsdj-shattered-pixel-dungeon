@@ -159,9 +159,9 @@ public class Belongings implements Iterable<Item> {
 	
 	private static final String WEAPON		= "weapon";
 	private static final String ARMOR		= "armor";
-	private static final String ARTIFACT   = "artifact";
-	private static final String MISC       = "misc";
-	private static final String RING       = "ring";
+	private static final String ARTIFACT	= "artifact";
+	private static final String MISC		= "misc";
+	private static final String RING		= "ring";
 
 	private static final String SECOND_WEP = "second_wep";
 
